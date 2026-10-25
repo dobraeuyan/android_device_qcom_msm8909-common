@@ -1,0 +1,28 @@
+cc_binary {
+    name: "android.hardware.drm@1.2-service.widevine",
+    vendor: true,
+    relative_install_path: "hw",
+    compile_multilib: "32",
+    init_rc: ["android.hardware.drm@1.2-service.widevine.rc"],
+    srcs: [
+        "service_1_2.cpp",
+        "WvDrmFactoryProxy.cpp",
+        "WvDrmPluginProxy.cpp",
+    ],
+    shared_libs: [
+        "android.hardware.drm@1.0",
+        "android.hardware.drm@1.1",
+        "android.hardware.drm@1.2",
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "liblog",
+        "libbase",
+        "libcutils",
+        "libbinder",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}

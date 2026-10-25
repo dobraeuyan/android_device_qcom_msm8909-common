@@ -1,0 +1,10 @@
+get_prop(location, wifi_prop)
+allow location self:capability net_admin;
+allow location self:socket create_socket_perms_no_ioctl;
+dontaudit location self:socket ioctl;
+
+allow location location_data_file:sock_file { create setattr write unlink };
+
+allow location self:capability net_raw;
+
+set_prop(location, vendor_izat_prop)

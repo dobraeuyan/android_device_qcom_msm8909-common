@@ -1,0 +1,9 @@
+get_prop(system_app, vendor_timekeep_prop)
+set_prop(system_app, vendor_timekeep_prop)
+allow system_app sysfs_rtc:dir search;
+allow system_app sysfs_rtc:file r_file_perms;
+dontaudit system_app vendor_time_data_file:dir rw_dir_perms;
+dontaudit system_app vendor_time_data_file:file create_file_perms;
+
+allow system_app sysfs_zram:dir search;
+allow system_app sysfs_zram:file r_file_perms;

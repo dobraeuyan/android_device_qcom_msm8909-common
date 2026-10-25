@@ -1,0 +1,13 @@
+allow qmuxd smd_device:chr_file rw_file_perms;
+
+qmux_socket(qmuxd)
+
+allow qmuxd self:capability { setuid setgid setpcap };
+
+wakelock_use(qmuxd)
+
+get_prop(qmuxd, vendor_radio_prop)
+
+r_dir_file(qmuxd, sysfs_ssr)
+
+allow qmuxd sysfs_smd_open_timeout:file w_file_perms;

@@ -1,0 +1,6 @@
+persist.vendor.timeadjust    u:object_r:vendor_timekeep_prop:s0
+
+qc.izat.gtp.wifi.low_power    u:object_r:vendor_izat_prop:s0
+
+sys.listeners.registered    u:object_r:vendor_tee_listener_prop:s0
+sys.keymaster.loaded        u:object_r:vendor_tee_listener_prop:s0

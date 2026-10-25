@@ -1,0 +1,6 @@
+allow hal_camera_default vendor_camera_data_file:sock_file { create getattr unlink write };
+allow hal_camera_default mm-qcamerad:unix_dgram_socket sendto;
+allow hal_camera_default mm-qcamerad:fd use;
+
+allow hal_camera_default sysfs_kgsl:lnk_file read;
+allow hal_camera_default sysfs_kgsl:file rw_file_perms;

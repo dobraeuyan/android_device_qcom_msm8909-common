@@ -1,0 +1,1 @@
+dontaudit mediaserver hal_drm_widevine_exec:file r_file_perms;

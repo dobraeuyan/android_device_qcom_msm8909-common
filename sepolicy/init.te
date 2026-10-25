@@ -1,0 +1,31 @@
+allow init persist_file:dir mounton;
+allow init firmware_file:dir mounton;
+allow init { persist_file firmware_file }:filesystem { getattr mount unmount relabelfrom };
+
+allow init mnt_vendor_file:filesystem { getattr mount unmount relabelfrom };
+
+allow vendor_init tmpfs:dir create_dir_perms;
+
+allow init tmpfs:dir mounton;
+allow vendor_init persist_file:dir { create_dir_perms mounton };
+allow vendor_init persist_file:file create_file_perms;
+allow vendor_init persist_file:filesystem { getattr mount unmount relabelfrom };
+allow vendor_init persist_file:{ dir file lnk_file } { relabelfrom relabelto };
+
+allow vendor_init mnt_vendor_file:dir { create_dir_perms mounton };
+allow vendor_init mnt_vendor_file:filesystem { getattr mount unmount relabelfrom };
+allow vendor_init mnt_vendor_file:dir { relabelfrom relabelto };
+
+typeattribute vendor_init data_between_core_and_vendor_violators;
+allow vendor_init { system_data_file media_rw_data_file }:dir setattr;
+
+allow vendor_init {
+    tombstone_data_file
+    wifi_data_file
+    dhcp_data_file
+    nfc_data_file
+    system_data_file
+    camera_data_file
+}:dir create_dir_perms;
+allow vendor_init wifi_data_file:file create_file_perms;
+allow vendor_init wpa_socket:dir create_dir_perms;

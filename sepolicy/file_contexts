@@ -1,0 +1,41 @@
+/mnt/per           u:object_r:mnt_vendor_file:s0
+/mnt/per(/.*)?     u:object_r:persist_file:s0
+
+/mnt/per/rfs(/.*)?        u:object_r:persist_rfs_file:s0
+/mnt/per/hlos_rfs(/.*)?   u:object_r:persist_rfs_shared_hlos_file:s0
+
+/vendor/lib(64)?/hw/gralloc\.msm8909\.so   u:object_r:same_process_hal_file:s0
+
+/vendor/lib(64)?/libsc-a3xx\.so   u:object_r:same_process_hal_file:s0
+
+/dev/vm_bms          u:object_r:vm_bms_device:s0
+/dev/battery_data    u:object_r:battery_data_device:s0
+/dev/wcnss_ctrl      u:object_r:wcnss_device:s0
+/dev/wcnss_wlan      u:object_r:wcnss_device:s0
+/dev/msm-rng         u:object_r:rng_device:s0
+/vendor/bin/vm_bms   u:object_r:vm_bms_exec:s0
+
+/vendor/bin/slim_daemon        u:object_r:location_exec:s0
+/vendor/bin/xtwifi-client      u:object_r:location_exec:s0
+/vendor/bin/xtwifi-inet-agent  u:object_r:location_exec:s0
+
+/vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service\.msm8909   u:object_r:hal_bluetooth_default_exec:s0
+
+/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service-pa   u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
+/vendor/bin/mm-qcamera-daemon    u:object_r:mm-qcamerad_exec:s0
+/vendor/bin/mm-pp-dpps           u:object_r:mm-pp-daemon_exec:s0
+/vendor/bin/qmuxd                u:object_r:qmuxd_exec:s0
+/vendor/bin/wcnss_service        u:object_r:wcnss_service_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service    u:object_r:hal_perf_default_exec:s0
+
+/dev/socket/qmux_audio(/.*)?      u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_bluetooth(/.*)?  u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_gps(/.*)?        u:object_r:qmuxd_socket:s0
+
+/dev/block/mmcblk0rpmb            u:object_r:rpmb_device:s0
+
+/vendor/bin/timekeep              u:object_r:timekeep_exec:s0
+
+/dev/block/by-name/ssd                              u:object_r:ssd_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/ssd  u:object_r:ssd_device:s0

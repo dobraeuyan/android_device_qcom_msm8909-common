@@ -1,0 +1,4 @@
+dontaudit ueventd self:capability sys_nice;
+
+allow ueventd wifi_data_file:dir search;
+allow ueventd wifi_data_file:file r_file_perms;

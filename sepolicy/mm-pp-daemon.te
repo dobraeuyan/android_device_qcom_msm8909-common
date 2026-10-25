@@ -1,0 +1,19 @@
+type mm-pp-daemon, domain;
+type mm-pp-daemon_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(mm-pp-daemon)
+
+vndbinder_use(mm-pp-daemon)
+
+allow mm-pp-daemon graphics_device:dir r_dir_perms;
+allow mm-pp-daemon graphics_device:chr_file rw_file_perms;
+allow mm-pp-daemon sysfs_graphics:dir search;
+allow mm-pp-daemon sysfs_graphics:file rw_file_perms;
+
+allow mm-pp-daemon sysfs_leds:dir r_dir_perms;
+allow mm-pp-daemon sysfs_leds:file rw_file_perms;
+
+allow mm-pp-daemon display_vendor_data_file:dir create_dir_perms;
+allow mm-pp-daemon display_vendor_data_file:file create_file_perms;
+
+allow mm-pp-daemon mnt_vendor_file:dir search;
+allow mm-pp-daemon persist_file:dir search;

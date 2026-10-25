@@ -1,0 +1,8 @@
+cc_library_shared {
+    name: "libperipheral_client",
+    srcs: ["peripheral_client_shim.c"],
+    vendor: true,
+    shared_libs: [],
+
+    sdk_version: "current",
+}

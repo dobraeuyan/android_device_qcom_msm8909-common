@@ -1,0 +1,9 @@
+dontaudit crash_dump {
+    bluetooth_prop
+    hwservicemanager_prop
+    device_config_runtime_native_prop
+    device_config_runtime_native_boot_prop
+}:file { open getattr };
+
+dontaudit crash_dump vendor_overlay_file:file { read open };
+dontaudit crash_dump runtime_event_log_tags_file:file getattr;

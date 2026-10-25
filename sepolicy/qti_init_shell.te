@@ -1,0 +1,12 @@
+allow qti_init_shell persist_bluetooth_file:dir rw_dir_perms;
+allow qti_init_shell persist_bluetooth_file:file create_file_perms;
+
+set_prop(qti_init_shell, vendor_tee_listener_prop)
+
+set_prop(qti_init_shell, system_radio_prop)
+
+allow qti_init_shell proc_swaps:file r_file_perms;
+allow qti_init_shell proc_dirty:file { getattr w_file_perms };
+
+allow qti_init_shell cgroup:file getattr;
+dontaudit qti_init_shell self:capability { dac_override dac_read_search };

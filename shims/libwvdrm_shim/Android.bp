@@ -1,0 +1,12 @@
+cc_library_shared {
+    name: "libwvdrm_shim",
+    srcs: ["wvdrm_shim.cpp"],
+    shared_libs: ["libbase"],
+    vendor: true,
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    init_rc: ["android.hardware.drm@1.0-service.widevine.rc"],
+}

@@ -1,0 +1,13 @@
+android_app {
+    name: "RemovePackages",
+    manifest: "AndroidManifest.xml",
+    certificate: "platform",
+    sdk_version: "current",
+    dex_preopt: {
+        enabled: false,
+    },
+    overrides: [
+        "Email",
+        "Exchange2",
+    ],
+}

@@ -1,0 +1,8 @@
+on init
+    chown system system /sys/devices/virtual/graphics/fb0/hsic
+    chmod 0660 /sys/devices/virtual/graphics/fb0/hsic
+
+service vendor.livedisplay-hal-2-0-pa /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service-pa
+    class hal
+    user system
+    group system

@@ -1,0 +1,5 @@
+allow kernel self:capability kill;
+
+allow kernel self:capability mknod;
+allow kernel device:dir w_dir_perms;
+allow kernel device:chr_file { create setattr };

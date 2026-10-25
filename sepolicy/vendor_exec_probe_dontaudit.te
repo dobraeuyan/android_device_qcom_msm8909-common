@@ -1,0 +1,1 @@
+dontaudit domain { location_exec hal_drm_widevine_exec }:file r_file_perms;

@@ -1,0 +1,14 @@
+cc_library_shared {
+    name: "libizatapi_shim",
+    srcs: ["izatapi_shim.cpp"],
+    vendor: true,
+    shared_libs: ["liblog"],
+
+    allow_undefined_symbols: true,
+    cflags: [
+        "-Wall",
+        "-Werror",
+
+        "-Wno-unused-parameter",
+    ],
+}

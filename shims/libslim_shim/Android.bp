@@ -1,0 +1,9 @@
+cc_library_shared {
+    name: "libslim_shim",
+    srcs: ["slim_shim.cpp"],
+    vendor: true,
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}

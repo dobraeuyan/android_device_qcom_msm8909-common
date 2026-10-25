@@ -1,0 +1,22 @@
+genfscon sysfs /devices/virtual/graphics/fb0/hsic u:object_r:sysfs_livedisplay_tuneable:s0
+
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,vmbms/power_supply u:object_r:sysfs_battery_supply:s0
+
+genfscon sysfs /devices/platform/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_disk_stat:s0
+
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,pm8916_rtc/rtc u:object_r:sysfs_rtc:s0
+
+genfscon sysfs /devices/platform/soc/87c00000.qcom,rmtfs_sharedmem/uio u:object_r:sysfs_uio_file:s0
+genfscon sysfs /devices/platform/soc/87ce0000.qcom,dsp_sharedmem/uio u:object_r:sysfs_uio_file:s0
+genfscon sysfs /devices/platform/soc/87cf0000.qcom,mdm_sharedmem/uio u:object_r:sysfs_uio_file:s0
+
+genfscon sysfs /devices/platform/soc/1de0000.qcom,venus/subsys0 u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/a21b000.qcom,pronto/subsys1 u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys2 u:object_r:sysfs_ssr:s0
+
+genfscon sysfs /devices/virtual/smdpkt/smdcntl0/open_timeout u:object_r:sysfs_smd_open_timeout:s0
+genfscon sysfs /devices/virtual/smdpkt/smdcntl8/open_timeout u:object_r:sysfs_smd_open_timeout:s0
+genfscon sysfs /devices/virtual/smdpkt/at_mdm0/open_timeout u:object_r:sysfs_smd_open_timeout:s0
+genfscon sysfs /devices/virtual/smdpkt/smd22/open_timeout u:object_r:sysfs_smd_open_timeout:s0
+genfscon sysfs /devices/virtual/smdpkt/apr_apps2/open_timeout u:object_r:sysfs_smd_open_timeout:s0
+genfscon sysfs /devices/virtual/smdpkt/smd_pkt_loopback/open_timeout u:object_r:sysfs_smd_open_timeout:s0

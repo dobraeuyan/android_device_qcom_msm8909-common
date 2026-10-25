@@ -1,0 +1,36 @@
+type mm-qcamerad, domain;
+type mm-qcamerad_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(mm-qcamerad)
+
+allow mm-qcamerad self:socket create_socket_perms;
+allowxperm mm-qcamerad self:socket ioctl msm_sock_ipc_ioctls;
+
+allow mm-qcamerad self:process execmem;
+
+allow mm-qcamerad video_device:dir r_dir_perms;
+allow mm-qcamerad { video_device gpu_device }:chr_file rw_file_perms;
+allow mm-qcamerad ion_device:chr_file rw_file_perms;
+allow mm-qcamerad graphics_device:dir r_dir_perms;
+allow mm-qcamerad graphics_device:chr_file rw_file_perms;
+
+allow mm-qcamerad vendor_camera_data_file:dir w_dir_perms;
+allow mm-qcamerad vendor_camera_data_file:sock_file { create getattr unlink write };
+allow mm-qcamerad hal_camera_default:unix_dgram_socket sendto;
+
+allow mm-qcamerad { hal_camera_default hal_graphics_allocator_default }:fd use;
+hal_client_domain(mm-qcamerad, hal_graphics_allocator)
+
+typeattribute mm-qcamerad data_between_core_and_vendor_violators;
+allow mm-qcamerad camera_data_file:dir create_dir_perms;
+allow mm-qcamerad camera_data_file:file create_file_perms;
+
+get_prop(mm-qcamerad, vendor_camera_prop)
+
+r_dir_file(mm-qcamerad, firmware_file)
+allow mm-qcamerad system_file:dir r_dir_perms;
+allow mm-qcamerad sysfs_graphics:file rw_file_perms;
+allow mm-qcamerad sysfs_data:file r_file_perms;
+
+allow mm-qcamerad self:tcp_socket create_stream_socket_perms;
+allow mm-qcamerad node:tcp_socket node_bind;
+allow mm-qcamerad port:tcp_socket name_bind;

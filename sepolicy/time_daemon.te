@@ -1,0 +1,5 @@
+dontaudit time_daemon self:socket ioctl;
+
+allow time_daemon self:capability { setuid setgid };
+
+allow time_daemon self:socket create_socket_perms_no_ioctl;

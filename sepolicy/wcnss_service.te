@@ -1,0 +1,13 @@
+allow wcnss_service wcnss_device:chr_file rw_file_perms;
+
+allow wcnss_service mnt_vendor_file:dir r_dir_perms;
+allow wcnss_service persist_file:dir r_dir_perms;
+allow wcnss_service persist_file:file r_file_perms;
+
+typeattribute wcnss_service data_between_core_and_vendor_violators;
+allow wcnss_service wifi_data_file:dir r_dir_perms;
+allow wcnss_service wifi_data_file:file { rw_file_perms setattr };
+
+dontaudit wcnss_service serialno_prop:file r_file_perms;
+
+unix_socket_connect(wcnss_service, property, init)
