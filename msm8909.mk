@@ -93,6 +93,9 @@ PRODUCT_PACKAGES += \
     lights.msm8909
 
 PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-service.msm8909
+
+PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sysfs \
     vendor.lineage.livedisplay@2.0-service-pa
 
