@@ -1,6 +1,7 @@
 /mnt/per           u:object_r:mnt_vendor_file:s0
 /mnt/per(/.*)?     u:object_r:persist_file:s0
 
+/mnt/per/display(/.*)?    u:object_r:persist_display_file:s0
 /mnt/per/rfs(/.*)?        u:object_r:persist_rfs_file:s0
 /mnt/per/hlos_rfs(/.*)?   u:object_r:persist_rfs_shared_hlos_file:s0
 
