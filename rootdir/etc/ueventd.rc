@@ -1,4 +1,4 @@
-firmware_directories /mnt/vendor/fwmt/ /mnt/vendor/fwwc/ /mnt/vendor/fwlink/
+firmware_directories /vendor/firmware/ /mnt/fwmt/image/ /mnt/vendor/fwmt/ /mnt/vendor/fwwc/ /mnt/vendor/fwlink/
 
 subsystem adf
     devname uevent_devname
