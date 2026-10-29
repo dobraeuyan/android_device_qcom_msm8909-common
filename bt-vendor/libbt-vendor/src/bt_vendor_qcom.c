@@ -600,7 +600,7 @@ static bool pronto_nvm_tags_enabled(void)
     property_get("ro.product.device", dev, "");
     if (!strcmp(dev, "bamboo")    || !strcmp(dev, "bamboolte") ||
         !strcmp(dev, "mimbre")    || !strcmp(dev, "mimbrelte")) {
-        ALOGI("nvm_tag: device %s is bamboo/mimbre family, skipping pronto NVM tags", dev);
+        ALOGI("nvm_tag: device %s is bamboo/mimbre family, skipping pronto RF/cfg NVM tags", dev);
         return false;
     }
     return true;
@@ -631,6 +631,9 @@ static void download_nvm_tags_pronto(int cmd_fd)
           bdaddr[5], bdaddr[4], bdaddr[3], bdaddr[2], bdaddr[1], bdaddr[0]);
 
     smd_send_nvm_tag(cmd_fd, tag2,  sizeof(tag2));
+    if (!pronto_nvm_tags_enabled())
+        return;
+
     smd_send_nvm_tag(cmd_fd, tag95, sizeof(tag95));
     smd_send_nvm_tag(cmd_fd, tag83, sizeof(tag83));
     smd_send_nvm_tag(cmd_fd, tag36, sizeof(tag36));
@@ -894,8 +897,7 @@ userial_open:
                             if(bt_hci_init_transport(q->fd) != -1){
                                 int (*fd_array)[] = (int (*) []) param;
 
-                                    if (pronto_nvm_tags_enabled())
-                                        download_nvm_tags_pronto(q->fd[0]);
+                                    download_nvm_tags_pronto(q->fd[0]);
 
                                     (*fd_array)[CH_CMD] = q->fd[0];
                                     (*fd_array)[CH_EVT] = q->fd[0];
