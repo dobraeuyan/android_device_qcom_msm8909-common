@@ -49,8 +49,6 @@ if [ -d /config/usb_gadget ]; then
     setprop sys.usb.rmnet.inst.name "rmnet"
     setprop sys.usb.dpl.inst.name "dpl"
 
-    setprop sys.usb.controller "msm_hsusb"
-
     serialnumber=`cat /config/usb_gadget/g1/strings/0x409/serialnumber` 2> /dev/null
     if [ "$serialnumber" == "" ]; then
         echo 1234567 > /config/usb_gadget/g1/strings/0x409/serialnumber
