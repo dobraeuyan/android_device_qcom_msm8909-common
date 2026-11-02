@@ -93,6 +93,11 @@ on boot
 
     write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 0
     write /proc/sys/vm/page-cluster 0
+    write /proc/sys/net/ipv4/tcp_congestion_control bbr
+    write /proc/sys/net/ipv4/tcp_slow_start_after_idle 0
+    write /proc/sys/net/core/netdev_max_backlog 2048
+    write /proc/sys/net/ipv4/tcp_rmem "262144 1048576 4194304"
+    write /proc/sys/net/ipv4/tcp_wmem "262144 524288 1048576"
 
     chown system graphics /sys/class/graphics/fb0/modes
     chmod 0664 /sys/class/graphics/fb0/modes
@@ -136,7 +141,7 @@ on boot
     chown wifi wifi /sys/module/wlan/parameters/fwpath
     chmod 0660 /sys/module/wlan/parameters/fwpath
     setprop wifi.interface wlan0
-    setprop net.tcp.buffersize.wifi    524288,2097152,4194304,262144,524288,1048576
+    setprop net.tcp.buffersize.wifi    262144,1048576,4194304,262144,524288,1048576
     setprop ro.telephony.call_ring.multiple false
     setprop persist.camera.gyro.disable 0
 
@@ -681,3 +686,6 @@ service vendor.ppd /vendor/bin/mm-pp-dpps
     user system
     socket pps stream 0660 system system
     group system graphics
+
+on property:wifi.active.interface=wlan0
+    write /sys/class/net/wlan0/queues/rx-0/rps_cpus e

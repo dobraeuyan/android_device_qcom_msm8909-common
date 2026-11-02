@@ -32,7 +32,7 @@ done
 
 write /sys/module/msm_thermal/core_control/enabled 1
 
-hispeed_load=85
+hispeed_load=65
 max_freq=`cat /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq`
 
 hispeed_freq=$max_freq
@@ -52,7 +52,7 @@ for sched_dir in /sys/devices/system/cpu/cpufreq/schedutil \
 done
 
 write /dev/stune/top-app/schedtune.prefer_idle 1
-write /dev/stune/top-app/schedtune.boost 0
+write /dev/stune/top-app/schedtune.boost 10
 
 write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
