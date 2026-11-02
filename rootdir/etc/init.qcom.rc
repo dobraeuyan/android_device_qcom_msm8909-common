@@ -331,6 +331,70 @@ on post-fs-data
     mkdir /mnt/per/data/sfs 0700 system system
     mkdir /mnt/per/data/tz 0700 system system
 
+    mkdir /mnt/per/rfs 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs
+    chmod 0700 /mnt/per/rfs
+    mkdir /mnt/per/rfs/shared 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/shared
+    chmod 0700 /mnt/per/rfs/shared
+    chown 2903 2903 /mnt/per/rfs/shared/server_info.txt
+    chmod 0660 /mnt/per/rfs/shared/server_info.txt
+
+    mkdir /mnt/per/rfs/msm 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/msm
+    chmod 0700 /mnt/per/rfs/msm
+    mkdir /mnt/per/rfs/msm/mpss 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/msm/mpss
+    chmod 0700 /mnt/per/rfs/msm/mpss
+    chown 2903 2903 /mnt/per/rfs/msm/mpss/server_check.txt
+    chmod 0600 /mnt/per/rfs/msm/mpss/server_check.txt
+    mkdir /mnt/per/rfs/msm/adsp 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/msm/adsp
+    chmod 0700 /mnt/per/rfs/msm/adsp
+    mkdir /mnt/per/rfs/msm/slpi 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/msm/slpi
+    chmod 0700 /mnt/per/rfs/msm/slpi
+
+    mkdir /mnt/per/rfs/mdm 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/mdm
+    chmod 0700 /mnt/per/rfs/mdm
+    mkdir /mnt/per/rfs/mdm/mpss 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/mdm/mpss
+    chmod 0700 /mnt/per/rfs/mdm/mpss
+    chown 2903 2903 /mnt/per/rfs/mdm/mpss/server_check.txt
+    chmod 0600 /mnt/per/rfs/mdm/mpss/server_check.txt
+    mkdir /mnt/per/rfs/mdm/adsp 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/mdm/adsp
+    chmod 0700 /mnt/per/rfs/mdm/adsp
+    mkdir /mnt/per/rfs/mdm/slpi 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/mdm/slpi
+    chmod 0700 /mnt/per/rfs/mdm/slpi
+    mkdir /mnt/per/rfs/mdm/tn 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/mdm/tn
+    chmod 0700 /mnt/per/rfs/mdm/tn
+    mkdir /mnt/per/rfs/mdm/sparrow 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/mdm/sparrow
+    chmod 0700 /mnt/per/rfs/mdm/sparrow
+
+    mkdir /mnt/per/rfs/apq 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/apq
+    chmod 0700 /mnt/per/rfs/apq
+    mkdir /mnt/per/rfs/apq/gnss 0700 2903 2903
+    chown 2903 2903 /mnt/per/rfs/apq/gnss
+    chmod 0700 /mnt/per/rfs/apq/gnss
+    chown 2903 2903 /mnt/per/rfs/apq/gnss/server_check.txt
+    chmod 0600 /mnt/per/rfs/apq/gnss/server_check.txt
+
+    mkdir /mnt/per/hlos_rfs 0770 2903 2904
+    chown 2903 2904 /mnt/per/hlos_rfs
+    chmod 0770 /mnt/per/hlos_rfs
+    mkdir /mnt/per/hlos_rfs/shared 0770 2903 2904
+    chown 2903 2904 /mnt/per/hlos_rfs/shared
+    chmod 0770 /mnt/per/hlos_rfs/shared
+
+    restorecon_recursive /mnt/per/rfs
+    restorecon_recursive /mnt/per/hlos_rfs
+
     mkdir /data/system 0775 system system
 
     mkdir /data/vendor/location 0770 gps gps
