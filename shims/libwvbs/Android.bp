@@ -1,5 +1,5 @@
 cc_library_shared {
-    name: "libwvdrm_shim",
+    name: "libwvbs",
     srcs: ["wvdrm_shim.cpp"],
     shared_libs: ["libbase"],
     vendor: true,

@@ -83,7 +83,6 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
-TARGET_LD_SHIM_LIBS += /vendor/bin/hw/android.hardware.drm@1.0-service.widevine|libwvdrm_shim.so
 TARGET_LD_SHIM_LIBS += /vendor/bin/slim_daemon|libslim_shim.so
 TARGET_LD_SHIM_LIBS += /vendor/bin/xtra-daemon|libizatapi_shim.so
 

@@ -106,7 +106,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.2-service.clearkey \
     android.hardware.drm@1.2-service.widevine \
     android.hardware.media.omx@1.0-service \
-    libwvdrm_shim \
+    libwvbs \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \

@@ -47,6 +47,10 @@ function blob_fixup() {
             sed -i '/add by dongkai for dolby ABH-1898 start/,/add by dongkai for dolby ABH-1898 end/d' "$2"
             ;;
 
+        vendor/bin/hw/android.hardware.drm@1.0-service.widevine)
+            sed -i 's|libbase\.so|libwvbs\.so|g' "$2"
+            ;;
+
     esac
 }
 
