@@ -181,7 +181,7 @@ vendor/etc/apdr.conf
 vendor/etc/cacert_location.pem
 vendor/etc/flp.conf
 vendor/etc/gps.conf
-vendor/etc/izat.conf|679c44e44dd057a6d7ddc69a2bd57a3afa844d61
+vendor/etc/izat.conf|63087b57c736ccef54d4ef1608d40eb6ccbfa085
 vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/xtra_root_cert.pem
@@ -403,7 +403,7 @@ vendor/bin/cnss-daemon
 vendor/bin/hostapd
 vendor/bin/wcnss_service
 vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/WCNSS_qcom_cfg.ini|e60eb2cc2a31dadeacf655853ec6c9341a50d483
+vendor/etc/wifi/WCNSS_qcom_cfg.ini|765d41f58c517d1a713121e56098d08614cb166c
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-impl.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0_vendor.so
