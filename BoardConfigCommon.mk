@@ -52,8 +52,7 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/qcom/msm8909-common
 TARGET_KERNEL_CONFIG := lineage_msm8909_defconfig
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 earlycon=msm_serial_dm,0x78af000
-BOARD_KERNEL_CMDLINE += androidboot.console=ttyHSL0 androidboot.hardware=qcom panic=30
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom panic=30 loglevel=3
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_CMDLINE += androidboot.memcg=true androidboot.usbcontroller=msm_hsusb
 BOARD_KERNEL_CMDLINE += firmware_class.path=/mnt/fwmt/image msm_poweroff.download_mode=0

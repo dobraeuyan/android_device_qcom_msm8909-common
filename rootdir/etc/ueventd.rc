@@ -1,5 +1,7 @@
 firmware_directories /vendor/firmware/ /mnt/fwmt/image/ /mnt/vendor/fwmt/ /mnt/vendor/fwwc/ /mnt/vendor/fwlink/
 
+parallel_restorecon enabled
+
 subsystem adf
     devname uevent_devname
 
