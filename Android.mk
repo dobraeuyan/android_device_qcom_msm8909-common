@@ -17,7 +17,7 @@ $(WCNSS_CFG_INI): $(LOCAL_INSTALLED_MODULE)
 	@echo "WCNSS_qcom_cfg.ini Firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /data/misc/wifi/$(notdir $@) $@
+	$(hide) ln -sf /vendor/etc/wifi/$(notdir $@) $@
 
 PERSIST_DICT := $(WLAN_PRIMA_DIR)/WCNSS_wlan_dictionary.dat
 $(PERSIST_DICT): $(LOCAL_INSTALLED_MODULE)

@@ -183,6 +183,14 @@ std::vector<Zone> readZones() {
             continue;
         }
 
+        if (name.find("-lowf") != std::string::npos) {
+            continue;
+        }
+        std::string policy;
+        if (readFile(base + "/policy", &policy) && policy.find("low_limits") != std::string::npos) {
+            continue;
+        }
+
         Zone zone;
         zone.name = name;
         zone.type = mapType(name);
@@ -209,6 +217,9 @@ std::vector<Zone> readZones() {
 
         int level = static_cast<int>(ThrottlingSeverity::LIGHT);
         for (const auto& trip : trips) {
+            if (trip.first <= 10000) {
+                continue;
+            }
             int severity;
             if (trip.second.find("critical") != std::string::npos) {
                 severity = static_cast<int>(ThrottlingSeverity::SHUTDOWN);
