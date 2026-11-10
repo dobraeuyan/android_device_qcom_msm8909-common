@@ -5,6 +5,7 @@ persist.audio.fluence.speaker=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
 
+debug.gralloc.gfx_ubwc_disable=1
 debug.hwui.use_partial_updates=false
 debug.renderengine.backend=gles
 vendor.vidc.disable.split.mode=1
@@ -20,6 +21,7 @@ ro.product.first_api_level=27
 ro.config.low_ram=false
 ro.lmk.critical_upgrade=true
 ro.lmk.upgrade_pressure=40
+dalvik.vm.dex2oat-Xmx=256m
 
 qemu.hw.mainkeys=0
 

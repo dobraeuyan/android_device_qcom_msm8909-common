@@ -9,5 +9,8 @@ android_app {
     overrides: [
         "Email",
         "Exchange2",
+        "SecureElement",
+        "WAPPushManager",
+        "SettingsIntelligence",
     ],
 }

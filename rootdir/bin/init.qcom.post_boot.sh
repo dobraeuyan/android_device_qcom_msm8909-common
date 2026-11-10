@@ -108,7 +108,10 @@ if [ "$(grep -c zram /proc/swaps)" -eq 0 ]; then
     swapon /dev/block/zram0 -p 32758
 fi
 
+write /sys/block/zram0/mem_limit "$((mem_kb * 28 / 100 * 1024))"
+
 write /proc/sys/vm/swappiness $swappiness
+write /proc/sys/vm/watermark_scale_factor 25
 
 write /proc/sys/vm/vfs_cache_pressure 80
 write /proc/sys/vm/dirty_expire_centisecs 1500

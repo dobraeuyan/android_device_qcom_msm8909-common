@@ -3,4 +3,5 @@
 
     <integer name="config_multiuserMaximumUsers">4</integer>
     <bool name="config_enableMultiUserUI">true</bool>
+    <item name="config_fullTaskSnapshotScale" format="float" type="dimen">0.5</item>
 </resources>
