@@ -1,4 +1,4 @@
-firmware_directories /vendor/firmware/ /mnt/fwmt/image/ /mnt/vendor/fwmt/ /mnt/vendor/fwwc/ /mnt/vendor/fwlink/
+firmware_directories /vendor/firmware/ /mnt/vendor/fwmt/image/ /mnt/vendor/fwmt/ /mnt/fwmt/image/ /mnt/vendor/fwwc/ /mnt/vendor/fwlink/
 
 parallel_restorecon enabled
 

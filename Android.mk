@@ -39,7 +39,7 @@ RFS_APQ_GNSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/apq/gnss
 $(RFS_APQ_GNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS APQ GNSS symlinks"
 	@mkdir -p $@/readonly/vendor
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/modem $@/ramdumps
@@ -50,7 +50,7 @@ RFS_MDM_ADSP_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/mdm/adsp
 $(RFS_MDM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MDM ADSP symlinks"
 	@mkdir -p $@/readonly/vendor
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/lpass $@/ramdumps
@@ -61,7 +61,7 @@ RFS_MDM_MPSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/mdm/mpss
 $(RFS_MDM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MDM MPSS symlinks"
 	@mkdir -p $@/readonly/vendor
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/modem $@/ramdumps
@@ -72,7 +72,7 @@ RFS_MDM_SLPI_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/mdm/slpi
 $(RFS_MDM_SLPI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MDM SLPI symlinks"
 	@mkdir -p $@/readonly
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/slpi $@/ramdumps
 	$(hide) ln -sf /mnt/per/rfs/mdm/slpi $@/readwrite
@@ -82,7 +82,7 @@ RFS_MDM_TN_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/mdm/tn
 $(RFS_MDM_TN_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MDM TN symlinks"
 	@mkdir -p $@/readonly
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/tn $@/ramdumps
 	$(hide) ln -sf /mnt/per/rfs/mdm/tn $@/readwrite
@@ -92,7 +92,7 @@ RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/adsp
 $(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MSM ADSP symlinks"
 	@mkdir -p $@/readonly/vendor
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/lpass $@/ramdumps
@@ -103,7 +103,7 @@ RFS_MSM_MPSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/mpss
 $(RFS_MSM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MSM MPSS symlinks"
 	@mkdir -p $@/readonly/vendor
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/modem $@/ramdumps
@@ -114,7 +114,7 @@ RFS_MSM_SLPI_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/msm/slpi
 $(RFS_MSM_SLPI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS MSM SLPI symlinks"
 	@mkdir -p $@/readonly
-	$(hide) ln -sf /mnt/fwmt $@/readonly/firmware
+	$(hide) ln -sf /mnt/vendor/fwmt $@/readonly/firmware
 	$(hide) ln -sf /mnt/per/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /data/vendor/tombstones/rfs/slpi $@/ramdumps
 	$(hide) ln -sf /mnt/per/rfs/msm/slpi $@/readwrite

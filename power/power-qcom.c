@@ -30,6 +30,7 @@
 #ifndef TAP_TO_WAKE_NODE
 #define TAP_TO_WAKE_NODE   "/sys/devices/virtual/gesture_mode/tp_gesture_status/gesture"
 #endif
+#define TAP_TO_WAKE_NODE_ALT "/sys/android_touch/SMWP"
 
 #define INTERACTION_MS    900
 #define INTERACTION_FREQ  998400
@@ -59,6 +60,12 @@ static long now_ms(void) {
     struct timespec ts;
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return ts.tv_sec * 1000L + ts.tv_nsec / 1000000L;
+}
+
+static const char *tap_to_wake_node(void) {
+    if (access(TAP_TO_WAKE_NODE, F_OK) == 0)
+        return TAP_TO_WAKE_NODE;
+    return TAP_TO_WAKE_NODE_ALT;
 }
 
 static void sysfs_write(const char *path, const char *val) {
@@ -248,7 +255,7 @@ static void power_set_feature(struct power_module *module, feature_t feature, in
 
     switch (feature) {
     case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
-        sysfs_write(TAP_TO_WAKE_NODE, state ? "1" : "0");
+        sysfs_write(tap_to_wake_node(), state ? "1" : "0");
         break;
     default:
         break;

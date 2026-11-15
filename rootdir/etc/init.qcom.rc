@@ -33,7 +33,8 @@ on early-init
     chmod 0755 /sys/kernel/debug
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
-    mkdir /mnt/fwmt 0771 system system
+    mkdir /mnt/vendor 0771 root system
+    mkdir /mnt/vendor/fwmt 0771 system system
     mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
     mount cgroup none /dev/memcg memory
@@ -446,9 +447,7 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on charger
-    setprop persist.sys.usb.config mass_storage
-
-    load_system_props
+    setprop sys.usb.configfs 1
     chown root system /sys/class/power_supply/bms/current_now
     chown root system /sys/class/power_supply/bms/voltage_ocv
     chmod 0664 /sys/class/power_supply/bms/current_now
@@ -457,7 +456,11 @@ on charger
     chown root system /sys/power/wake_unlock
     chmod 0660 /sys/power/wake_lock
     chmod 0660 /sys/power/wake_unlock
-    start vendor.qcom-post-boot
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
 
 on charger && property:ro.vendor.vm_bms.enabled=1
     start vendor.vm_bms
@@ -475,6 +478,7 @@ on property:sys.boot_completed=1
     chown media audio /sys/kernel/wcd_cpe0/fw_name
     start vendor.qcom-post-boot
     start loc_launcher
+    start vendor.set-max-cached
 
 on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
@@ -645,14 +649,10 @@ service hostapd_fst /vendor/bin/hostapd -dd -g /data/vendor/wifi/hostapd/global 
     oneshot
     disabled
 
-service charger /charger
+service charger /system/bin/charger
     class charger
-    group system graphics
-    seclabel u:r:healthd:s0
-
-service qbcharger /charger -m 1
-    disabled
-    oneshot
+    group system graphics input
+    capabilities SYS_BOOT WAKE_ALARM
 
 service vendor.vm_bms /vendor/bin/vm_bms
     user root
@@ -702,6 +702,13 @@ service vendor.ppd /vendor/bin/mm-pp-dpps
     user system
     socket pps stream 0660 system system
     group system graphics
+
+service vendor.set-max-cached /system/bin/sh -c "/system/bin/cmd device_config put activity_manager max_cached_processes 12"
+    user root
+    group shell
+    disabled
+    oneshot
+    seclabel u:r:shell:s0
 
 on property:wifi.active.interface=wlan0
     write /sys/class/net/wlan0/queues/rx-0/rps_cpus e

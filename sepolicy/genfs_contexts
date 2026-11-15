@@ -1,6 +1,7 @@
 genfscon sysfs /devices/virtual/graphics/fb0/hsic u:object_r:sysfs_livedisplay_tuneable:s0
 
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,vmbms/power_supply u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/78d9000.usb/power_supply u:object_r:sysfs_usb_supply:s0
 
 genfscon sysfs /devices/platform/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0 u:object_r:sysfs_disk_stat:s0
 

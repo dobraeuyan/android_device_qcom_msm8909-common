@@ -181,7 +181,7 @@ vendor/etc/apdr.conf
 vendor/etc/cacert_location.pem
 vendor/etc/flp.conf
 vendor/etc/gps.conf
-vendor/etc/izat.conf|63087b57c736ccef54d4ef1608d40eb6ccbfa085
+vendor/etc/izat.conf|66ebc72a48948c2b69f591ef5f8eee6d78a80e0b
 vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/xtra_root_cert.pem

@@ -21,6 +21,8 @@ DEVICE_SPECIFIC_BT_VENDOR_PATH := $(PLATFORM_PATH)/bt-vendor
 TARGET_BOOTLOADER_BOARD_NAME := msm8909
 TARGET_NO_BOOTLOADER := true
 
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
 BOARD_USES_ADRENO := true
 
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -52,10 +54,9 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/qcom/msm8909-common
 TARGET_KERNEL_CONFIG := lineage_msm8909_defconfig
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom panic=30 loglevel=3
-BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom panic=30 loglevel=3 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci msm_poweroff.download_mode=0
 BOARD_KERNEL_CMDLINE += androidboot.memcg=true androidboot.usbcontroller=msm_hsusb
-BOARD_KERNEL_CMDLINE += firmware_class.path=/mnt/fwmt/image msm_poweroff.download_mode=0
 
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
@@ -103,3 +104,4 @@ WIFI_DRIVER_STATE_CTRL_PARAM := "/sys/module/wlan/parameters/fwpath"
 WIFI_DRIVER_STATE_ON := "sta"
 WIFI_DRIVER_STATE_OFF := "off"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+TARGET_WCNSS_WLAN_NV_IN_PERSIST := false
