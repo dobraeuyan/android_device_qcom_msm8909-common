@@ -13,6 +13,7 @@ genfscon sysfs /devices/platform/soc/87cf0000.qcom,mdm_sharedmem/uio u:object_r:
 
 genfscon sysfs /devices/platform/soc/1de0000.qcom,venus/subsys0 u:object_r:sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/a21b000.qcom,pronto/subsys1 u:object_r:sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/a000000.qcom,wcnss-wlan/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys2 u:object_r:sysfs_ssr:s0
 
 genfscon sysfs /devices/virtual/smdpkt/smdcntl0/open_timeout u:object_r:sysfs_smd_open_timeout:s0

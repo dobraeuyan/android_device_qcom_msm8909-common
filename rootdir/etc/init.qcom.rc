@@ -709,6 +709,3 @@ service vendor.set-max-cached /system/bin/sh -c "/system/bin/cmd device_config p
     disabled
     oneshot
     seclabel u:r:shell:s0
-
-on property:wifi.active.interface=wlan0
-    write /sys/class/net/wlan0/queues/rx-0/rps_cpus e

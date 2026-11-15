@@ -151,6 +151,12 @@ subsystem sound
 /sys/devices/virtual/usb_composite/*                  enable                    0664  root   system
 /sys/devices/virtual/gesture_mode/tp_gesture_status   gesture                   0664  root   system
 /sys/devices/virtual/smdpkt/smdcntl*                  open_timeout              0664   radio   radio
+/sys/devices/platform/soc/a000000.qcom,wcnss-wlan/net/* queues/rx-0/rps_cpus      0664   system  wifi
+/sys/devices/platform/soc/a000000.qcom,wcnss-wlan/net/* queues/rx-1/rps_cpus      0664   system  wifi
+/sys/devices/platform/soc/a000000.qcom,wcnss-wlan/net/* queues/rx-2/rps_cpus      0664   system  wifi
+/sys/devices/platform/soc/a000000.qcom,wcnss-wlan/net/* queues/rx-3/rps_cpus      0664   system  wifi
+/sys/devices/platform/soc/a000000.qcom,wcnss-wlan/net/* queues/rx-4/rps_cpus      0664   system  wifi
+/sys/devices/platform/soc/a000000.qcom,wcnss-wlan/net/* queues/rx-5/rps_cpus      0664   system  wifi
 
 /dev/dvb*                 0660   root       system
 
