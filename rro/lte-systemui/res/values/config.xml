@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="quick_settings_tiles_default" translatable="false">wifi,cell,bt,dnd,rotation,battery,airplane,cast,caffeine,hotspot</string>
+    <string name="quick_settings_tiles_default" translatable="false">wifi,cell,bt,dnd,rotation,battery,airplane,caffeine,hotspot</string>
 </resources>

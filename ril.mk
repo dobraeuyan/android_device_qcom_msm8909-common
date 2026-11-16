@@ -8,4 +8,6 @@ PRODUCT_PACKAGES += \
     rild
 
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8909-common/vintf/manifest-radio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/manifest-radio.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    device/qcom/msm8909-common/vintf/manifest-radio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/manifest-radio.xml \
+    device/qcom/msm8909-common/gps/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf
